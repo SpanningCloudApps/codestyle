@@ -12,13 +12,17 @@ jobs:
     steps:
       - name: Checkoout repository
         uses: actions/checkout@v3
-      - name: Set up Node 15
+      - name: 'Set up Node 16'
         uses: actions/setup-node@v3
         with:
           node-version: '16'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@kaseya'
-      - run: npm ci
-      - run: npm publish
+      - name: 'Install dependencies'
+        working-directory: ${{ github.workspace }}/js
+        run: npm ci
+      - name: 'Publish package'
+        working-directory: ${{ github.workspace }}/js
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
