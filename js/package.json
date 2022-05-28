@@ -1,5 +1,5 @@
 {
-  "name": "@spanningcloudapps/eslint-config-base",
+  "name": "@panningcloudapps/eslint-config-base",
   "version": "1.0.0",
   "description": "Common code style ",
   "main": "index.js",
