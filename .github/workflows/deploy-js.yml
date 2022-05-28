@@ -1,5 +1,8 @@
 name: Deploy JS Codestyle
-on: [push]
+on:
+  push:
+    paths:
+      - js/**
 jobs:
   Deploy-JS-Codestyle:
     runs-on: ubuntu-latest
