@@ -1,5 +1,5 @@
 {
-  "name": "@kaseya/eslint-config-spanning-base",
+  "name": "@kaseya/eslint-config-base",
   "version": "1.0.0",
   "description": "Common code style",
   "main": "index.js",
