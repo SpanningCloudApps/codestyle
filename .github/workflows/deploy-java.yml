@@ -21,7 +21,7 @@ jobs:
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Publish package
-        run: mvn --batch-mode deploy -Dversion=${{ steps.create_tag.outputs.tag_time }}-${{ steps.create_tag.outputs.tag_hash }}
+        run: mvn --batch-mode deploy -Dversion=${{ steps.create_tag.outputs.tag_time }}
         working-directory: ${{ github.workspace }}/java
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
