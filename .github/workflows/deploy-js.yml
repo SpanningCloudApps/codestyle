@@ -1,8 +1,6 @@
 name: Deploy JS Codestyle
 on:
   push:
-    branches:
-      - main
     paths:
       - js/**
 jobs:
