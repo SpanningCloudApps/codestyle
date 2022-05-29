@@ -24,6 +24,14 @@ jobs:
       - run: cat /home/runner/work/_temp/.npmrc
       - run: ls
         working-directory: ${{ github.workspace }}/js
+      - name: Create build version
+        id: create_tag
+        uses: mcpierce/github-commit-timestamp-tagger@master
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: 'Set version'
+        run: npm version ${{ steps.create_tag.outputs.tag_time }}.0.0
+        working-directory: ${{ github.workspace }}/js
       - name: 'Publish package'
         working-directory: ${{ github.workspace }}/js
         run: npm publish
