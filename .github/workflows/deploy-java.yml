@@ -1,6 +1,8 @@
 name: Deploy Java Codestyle
 on:
   push:
+    branches:
+      - main
     paths:
       - java/**
 jobs:
