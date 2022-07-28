@@ -20,6 +20,19 @@ npm-debug.log
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+# Compiled Python bytecode
+*.py[cod]
+
+# Log files
+*.log
+
+# Maven
+target/
+dist/
+
+# Unit test reports
+TEST*.xml
+
 # OS generated files #
 ######################
 .DS_Store*
@@ -59,5 +72,18 @@ out
 .idea/*.xml
 **/.idea/*.xml
 .idea/*.ids
+
+# Applications
+*.app
+*.exe
+*.war
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
 
 .vscode/*

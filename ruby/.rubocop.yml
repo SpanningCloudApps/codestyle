@@ -1,0 +1,123 @@
+#  ------------------------- Metrics ------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_metrics.md
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'config/**/*.rb'
+    - 'lib/tasks/**/*.rake'
+
+# The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
+Metrics/ClassLength:
+  Max: 200
+
+# Commonly used screens these days easily fit more than 80 characters.
+Metrics/LineLength:
+  Max: 120
+
+# Shorter methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things).
+Metrics/MethodLength:
+  Max: 20
+
+#  ------------------------- Layout -------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_layout.md
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+#  -------------------------- Lint --------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_lint.md
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+#  -------------------------- Naming ------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_naming.md
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+
+#  -------------------------- Rails -------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_rails.md
+
+Rails:
+  Enabled: true
+
+Rails/ActiveRecordAliases:
+  Enabled: false
+
+#  -------------------------- Style -------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_style.md
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    # inject seems more common in the community.
+    reduce: "inject"
+    collect: "map"
+    detect: 'detect'
+
+# This cop is not smart enough to differentiate between a multi-line conditional
+# and a ternary, so it's pretty useless since those two should be different use cases
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/EmptyLiteral:
+  Enabled: false
+
+# When all keys are symbols, do not use hash rockets. Otherwise do not mix styles.
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+# Either allow this style or don't. Marking it as safe with parenthesis
+# is silly. Let's try to live without them for now.
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: false
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+# Even though I think the use of %i[something something_else] is good,
+# I think [:something, :something_else] is equally valid
+Style/SymbolArray:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
