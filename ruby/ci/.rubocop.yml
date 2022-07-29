@@ -1,0 +1,282 @@
+# This file contains a list of Rubocop rules we would like to apply to
+# in our CI process. Only a subset of rules from the development
+# Rubocop configuration are listed here since this is a legacy codebase
+# needing gradual style improvement.
+
+AllCops:
+  DisabledByDefault: true
+  Exclude:
+    - '../db/schema.rb'
+    - '../db/schema_postgres.rb'
+    - '../db/seeds.rb'
+
+#  ------------------------- Metrics ------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_metrics.md
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - '../db/migrate/201*.rb'
+    - '../db/migrate/2020*.rb'
+
+#  ------------------------- Layout -------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_layout.md
+
+Layout/AlignHash:
+  Enabled: true
+
+Layout/AlignParameters:
+  EnforcedStyle: with_first_parameter
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Layout/EndAlignment:
+  Enabled: true
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Layout/IndentArray:
+  Enabled: true
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/IndentHash:
+  Enabled: true
+
+Layout/MultilineArrayBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/MultilineMethodDefinitionBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+
+Style/MultilineTernaryOperator:
+  Enabled: true
+
+Layout/RescueEnsureAlignment:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAfterMethodName:
+  Enabled: true
+
+Layout/SpaceAfterNot:
+  Enabled: true
+
+Layout/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Layout/TrailingBlankLines:
+  Enabled: true
+
+#  -------------------------- Lint --------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_lint.md
+Lint/Debugger:
+  Enabled: true
+
+Lint/InheritException:
+  EnforcedStyle: standard_error
+
+Lint/UselessAssignment:
+  Enabled: true
+
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
+#  -------------------------- Naming ------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_naming.md
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: true
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: optional
+
+Naming/MethodName:
+  EnforcedStyle: snake_case
+
+#  -------------------------- Rails -------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_rails.md
+
+Rails:
+  Enabled: true
+  Exclude:
+    - '../config/deploy.rb'
+
+Rails/Blank:
+  Enabled: true
+  UnlessPresent: true
+  NotPresent: true
+  NilOrEmpty: true
+
+Rails/Present:
+  Enabled: true
+
+Rails/Presence:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: true
+
+#  -------------------------- Style -------------------------
+# https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_style.md
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+
+Style/BracesAroundHashParameters:
+  Enabled: true
+
+Style/CollectionMethods:
+  PreferredMethods:
+    reduce: "inject"
+    collect: "map"
+    detect: 'detect'
+
+Style/CommentAnnotation:
+  Enabled: true
+
+Style/GuardClause:
+  Enabled: true
+  Exclude:
+    - '../db/migrate/201*.rb'
+    - '../db/migrate/2020*.rb'
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/IdenticalConditionalBranches:
+  Enabled: true
+
+Style/LineEndConcatenation:
+  Enabled: true
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/MultilineBlockChain:
+  Enabled: true
+
+Style/MultilineIfModifier:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: true
+
+Style/ParallelAssignment:
+  Enabled: true
+
+Style/Proc:
+  Enabled: true
+
+Style/RedundantBegin:
+  Enabled: true
+
+Style/RedundantParentheses:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+
+Style/RescueModifier:
+  Enabled: true
+
+Style/RescueStandardError:
+  EnforcedStyle: explicit
+
+Style/Semicolon:
+  Enabled: true
+
+Style/SymbolProc:
+  Enabled: true
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/UnlessElse:
+  Enabled: true
+
+Style/UnneededInterpolation:
+  Enabled: true
