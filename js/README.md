@@ -1,5 +1,5 @@
 # @kaseya/eslint-config-kaseya-base
-This package provides kaseya's base JS/TS .eslintrc as an extensible shared config.
+This package provides Kaseya's base JS/TS .eslintrc as an extensible shared config.
 
 Config based on `eslint-config-airbnb-base` package
 
