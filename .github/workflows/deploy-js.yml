@@ -1,0 +1,41 @@
+name: Deploy JS Codestyle
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - js/**
+jobs:
+  Deploy-JS-Codestyle:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkoout repository
+        uses: actions/checkout@v3
+      - name: 'Set up Node 16'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          registry-url: 'https://npm.pkg.github.com'
+      - name: 'Install dependencies'
+        working-directory: ${{ github.workspace }}/js
+        run: npm ci
+      - run: ls
+      - run: cat /home/runner/work/_temp/.npmrc
+      - run: ls
+        working-directory: ${{ github.workspace }}/js
+      - name: Create build version
+        id: create_tag
+        uses: mcpierce/github-commit-timestamp-tagger@master
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: 'Set version'
+        run: npm version ${{ steps.create_tag.outputs.tag_time }}.0.0
+        working-directory: ${{ github.workspace }}/js
+      - name: 'Publish package'
+        working-directory: ${{ github.workspace }}/js
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
