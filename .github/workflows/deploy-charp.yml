@@ -1,0 +1,50 @@
+name: Deploy C# CodeAnalysis
+
+on:
+  push:
+    tags:
+      - "csharp_*"
+
+jobs:
+  pack-n-publish:
+    name: "Pack'n'Publish"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Parse BUILD_VERSION from tag name
+        run: echo "BUILD_VERSION=${GITHUB_REF/refs\/tags\/csharp_/}" >> $GITHUB_ENV
+
+      - name: Pack
+        run: |
+          for csproj in ./csharp/*/*.csproj
+          do 
+            dotnet pack $csproj \
+              -p:BuildVersion=$BUILD_VERSION \
+              --verbosity detailed \
+              --nologo \
+              --configuration Release \
+              --include-symbols \
+              --include-source \
+              --output ./out/
+          done
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nupkg
+          path: ./out/*.nupkg
+
+      - name: GitHub Package Registry Tool Install
+        run: dotnet tool install --global --verbosity minimal --no-cache gpr
+
+      - name: Publish artifacts
+        run: |
+          gpr push \
+            --api-key $GITHUB_TOKEN \
+            --repository ${{ github.repository }} \
+            --retries 1 \
+            ./out/*.nupkg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -321,3 +321,13 @@ dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity 
 
 # SA1633: File should have header
 dotnet_diagnostic.SA1633.severity = none
+
+#==========================
+# Require ConfigureAwait()
+#==========================
+
+# CA2007: Do not directly await a Task
+dotnet_diagnostic.CA2007.severity = error
+
+# RCS1090: Add call to 'ConfigureAwait'
+dotnet_diagnostic.RCS1090.severity = none

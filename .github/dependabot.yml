@@ -25,3 +25,13 @@ updates:
       - "dependencies"
       - "javascript"
     open-pull-requests-limit: 3
+
+  - package-ecosystem: nuget
+    directory: "/csharp"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    labels:
+      - "dependencies"
+      - "csharp"
+    open-pull-requests-limit: 3

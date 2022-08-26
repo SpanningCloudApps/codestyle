@@ -1,3 +1,12 @@
+## Deploy
+
+If you decide to publish the next version of the nuget packages, you will need to create a tag with a name like "csharp_###" and push it.
+<br />Example:
+```
+$ git tag csharp_1
+$ git push --tags
+```
+
 ## Review
 
 To analyze the style and quality of .NET code, analyzers are used that are configured using the _**.editorconfig**_ file
@@ -17,6 +26,8 @@ Current _**.editorconfig**_ file configures two analyzer packages:
 
 ## How to include _.editorconfig_
 
+You will need to install the appropriate version of the _Kaseya.CodeAnalysis_ nuget package into your project and all the following magic should appear by itself after the first build.
+<hr />
 The _**.editorconfig**_ file must be placed at the root of the solution/project.
 <br />Microsoft.CodeAnalysis.CSharp.CodeStyle - will work automatically in popular IDEs (Visual Studio, Visual Studio Code, Rider (partial))
 <br />StyleCop.Analyzers - for this package to work, you need to include the NuGet package [StyleCop.Analyzers](https://www.nuget.org/packages/StyleCop.Analyzers/) in solution
