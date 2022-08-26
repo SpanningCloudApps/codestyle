@@ -49,3 +49,8 @@ The _**.editorconfig**_ supported by Visual Studio, Visual Studio Code, Rider (p
 
 If NuGet packages are included in the project, the analyzers described above will be launched when the project is built
 <br /><span style="color:green">Note:</span> if the NuGet packages described above are not included in the project being built, they can be installed during the build, and then the build will be carried out with the analyzers. This way we can force the analyzers to run and issue build errors.
+
+## How it looks in github packages
+
+When you click on the Packages link in "<>code" tab of the main repository, you see list of the packages. One of them will be a nuget package with name like "Kaseya.CodeAnalysis" and look like:
+![Screenshot](./proof.png)
