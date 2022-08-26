@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
+		<Product>Kaseya.CodeAnalysis</Product>
+		<VersionPrefix>2.1.$(BuildVersion)</VersionPrefix>
+		<Description>Distributes a common .editorconfig file.</Description>
+		<RepositoryUrl>https://github.com/SpanningCloudApps/codestyle</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>editorconfig, analyzer</PackageTags>
+		<IsPackable>true</IsPackable>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<IncludeSource>true</IncludeSource>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\Kaseya.CodeAnalysis.props" Pack="true" PackagePath="\build" />
+		<Content Include="..\.editorconfig" Pack="true" PackagePath="\content\Rules"></Content>
+	</ItemGroup>
+
+</Project>
