@@ -53,4 +53,4 @@ If NuGet packages are included in the project, the analyzers described above wil
 ## How it looks in github packages
 
 When you click on the Packages link in "<>code" tab of the main repository, you see list of the packages. One of them will be a nuget package with name like "Kaseya.CodeAnalysis" and look like:
-![Screenshot](./proof.png)
+![Screenshot](./code_analyze_package.png)

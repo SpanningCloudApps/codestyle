@@ -2,8 +2,10 @@ name: Deploy C# CodeAnalysis
 
 on:
   push:
-    tags:
-      - "csharp_*"
+    branches:
+      - main
+    paths:
+      - csharp/**
 
 jobs:
   pack-n-publish:
@@ -19,7 +21,7 @@ jobs:
       - name: Pack
         run: |
           for csproj in ./csharp/*/*.csproj
-          do 
+          do
             dotnet pack $csproj \
               -p:BuildVersion=$BUILD_VERSION \
               --verbosity detailed \
