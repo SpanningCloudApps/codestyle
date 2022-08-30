@@ -31,7 +31,6 @@ jobs:
           git tag csharp_$new_version
           git push --tags
           echo "PATCH_VERSION=$new_version" >> $GITHUB_ENV
-
       - name: Pack
         run: |
           for csproj in ./csharp/*/*.csproj
@@ -45,7 +44,6 @@ jobs:
               --include-source \
               --output ./out/
           done
-
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
