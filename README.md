@@ -1,9 +1,25 @@
 # Kaseya CodeStyle Guide
 
-1. < About what this repository with links to Ruby, Java, JS, CSharp folders >
-2. < Github actions and Github packages >
-3. < Ho to download Github package >
-4. ./github/CONTRIBUTING.md ----> <Pull requests must be merged only from Kaseya developers>
-5. < Add README.md for Java folder > -> < How to download it from github packages in Maven(pom.xml) and Gradle (build.gradle) >   
+This repository provides a set of code styles for several programming languages: [Ruby](https://github.com/SpanningCloudApps/codestyle/blob/main/ruby/), [Java](https://github.com/SpanningCloudApps/codestyle/tree/main/java), [C#](https://github.com/SpanningCloudApps/codestyle/blob/main/csharp/) and [JavaScript](https://github.com/SpanningCloudApps/codestyle/blob/main/js/)
+
+JavaScript code style extends Airbnb's base JS  
+
+
+
+## Github actions and Github packages
+   We use Github actions to create a projects assembly and publish packages to Github. Files with instructions here:
+   [C#](https://github.com/SpanningCloudApps/codestyle/blob/main/.github/workflows/deploy-charp.yml),
+   [Java](https://github.com/SpanningCloudApps/codestyle/blob/main/.github/workflows/deploy-java.yml),
+   [JavaScript](https://github.com/SpanningCloudApps/codestyle/blob/main/.github/workflows/deploy-js.yml),
+   [Ruby](https://github.com/SpanningCloudApps/codestyle/blob/main/.github/workflows/deploy-ruby.yml).
+
+   Ready-made packages [here](https://github.com/orgs/SpanningCloudApps/packages?repo_name=codestyle)
+
+
+## How to use package in your project
+
+   [eslint-config-base](https://github.com/SpanningCloudApps/codestyle/pkgs/npm/eslint-config-base)  
+   [com.kaseya.static-analyzers](https://github.com/SpanningCloudApps/codestyle/tree/main/java/Readme.md)
+
 6. < Update java/.mvn/wrapper > -> < maven local > -> < mvn -N wrapper:wrapper >
-7. < Fixed Ruby actions >
+### For those who use Maven Wrapper to build a project
