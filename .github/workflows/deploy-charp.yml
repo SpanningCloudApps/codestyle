@@ -23,8 +23,7 @@ jobs:
         shell: bash
         run: |
           last_version=$(\
-            (ls .git/refs/tags/ --almost-all --format single-column -1 2>/dev/null | grep . || echo "csharp_0") \
-              | grep ^csharp_ \
+            (ls .git/refs/tags/ --almost-all --format single-column -1 2>/dev/null | grep ^csharp_ || echo "csharp_0") \
               | egrep -o [0-9]+ \
               | tail -n 1 \
             )
