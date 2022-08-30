@@ -1,0 +1,1 @@
+# Pull requests must be merged only by Kaseya developers
