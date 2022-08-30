@@ -1,12 +1,3 @@
-## Deploy
-
-If you decide to publish the next version of the nuget packages, you will need to create a tag with a name like "csharp_###" and push it.
-<br />Example:
-```
-$ git tag csharp_1
-$ git push --tags
-```
-
 ## Review
 
 To analyze the style and quality of .NET code, analyzers are used that are configured using the _**.editorconfig**_ file

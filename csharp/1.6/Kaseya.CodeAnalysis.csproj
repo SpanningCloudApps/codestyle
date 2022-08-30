@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>netstandard1.6</TargetFrameworks>
 		<Product>Kaseya.CodeAnalysis</Product>
-		<VersionPrefix>1.6.$(BuildVersion)</VersionPrefix>
+		<VersionPrefix>1.6.$(PatchVersion)</VersionPrefix>
 		<Description>Distributes a common .editorconfig file.</Description>
 		<RepositoryUrl>https://github.com/SpanningCloudApps/codestyle</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
