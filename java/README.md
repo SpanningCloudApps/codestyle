@@ -13,6 +13,7 @@ Very important: you must have an account on [github](https://github.com/)
 ![](doc/images/open-settings.png)  
 CONGRATULATIONS!!! You got your personal access token! Copy the value, it will be required in the future  
 * Attention! Make sure to copy your personal access token. You won’t be able to see it again!
+
 2. ### Add repository configurations in settings.xml 
 * Make right-click on your module and select "Maven -> Open settings.xml" as on the screenshot  
  
@@ -53,7 +54,9 @@ CONGRATULATIONS!!! You got your personal access token! Copy the value, it will b
   </servers>
 </settings>
 ```
+
 3. ### Add dependency in your pom.xml or build.gradle
+
 * For Maven
 ```
 <dependency>
@@ -62,6 +65,7 @@ CONGRATULATIONS!!! You got your personal access token! Copy the value, it will b
   <version>20220826114552</version>
 </dependency>
 ```
+
 * For Gradle
 ```
 dependencies {
@@ -69,10 +73,12 @@ dependencies {
 }
 ```
 4. ### Run command 
+
 * For Maven
 ```
 mvn install
 ```
+
 * For Gradle
 ```
 gradlew build
