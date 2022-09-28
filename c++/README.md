@@ -429,7 +429,7 @@ for the sake of building a large and complex system (enterprise application).
 
 1. ### Platform specifics
 
-    1. Awoid using `#ifdef platform` inline
+    1. Avoid using `#ifdef platform` inline
     1. Place platform specific functionality in separate files
     1. Only include platform specific files for that specific platform in CMakeLists.txt.
     1. At the top of a platform specific .cpp file, include a similar  compile-guard:
