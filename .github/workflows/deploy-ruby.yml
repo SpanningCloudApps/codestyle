@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: |
           cd ruby/
-          bundle _2.3.7_ exec rubocop -c .rubocop.yml -d
+          bundle _2.3.7_ exec rubocop -c .rubocop.yml -d --force-exclusion
       - name: Run Tests
         shell: bash
         run: |

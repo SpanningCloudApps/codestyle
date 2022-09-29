@@ -6,6 +6,7 @@ AllCops:
   DisabledByDefault: true
   TargetRubyVersion: 2.5
   Exclude:
+    - 'vendor/**/*'
     - 'spec/dummy/bin/*'
     - '*.md'
     - '../db/schema.rb'
