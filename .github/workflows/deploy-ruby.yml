@@ -13,8 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        ruby: ["2.2", "2.7", "3.0", "3.1"]
+        os: [macos-latest, ubuntu-16, windows-latest]
+        ruby: ["2.5", "2.7", "3.0", "3.1"]
 
     runs-on: ${{ matrix.os }}
 
@@ -23,13 +23,21 @@ jobs:
       packages: write
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run RuboCop
-      run: bundle exec rubocop
-    - name: Run Tests
-      run: bundle exec rake
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler: 2.3.7
+          working-directory: ${{ github.workspace }}/ruby
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Run RuboCop
+        shell: bash
+        run: |
+          cd ruby/
+          bundle _2.3.7_ exec rubocop -c .rubocop.yml --force-exclusion --require rubocop-rake
+      - name: Run Tests
+        shell: bash
+        run: | # add more tests as necessary below rake rubocop. Make sure they pass before PR
+          cd ruby/
+          bundle _2.3.7_ exec rake rubocop

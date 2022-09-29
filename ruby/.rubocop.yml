@@ -1,13 +1,18 @@
 require:
  - rubocop-performance
  - rubocop-rspec
+ - rubocop-rake
 
 AllCops:
+  DisabledByDefault: true
   TargetRubyVersion: 2.5
-  NewCops: enable
   Exclude:
+    - 'vendor/**/*'
     - 'spec/dummy/bin/*'
     - '*.md'
+    - '../db/schema.rb'
+    - '../db/schema_postgres.rb'
+    - '../db/seeds.rb'
 
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space

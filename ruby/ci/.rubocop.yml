@@ -3,13 +3,6 @@
 # Rubocop configuration are listed here since this is a legacy codebase
 # needing gradual style improvement.
 
-AllCops:
-  DisabledByDefault: true
-  Exclude:
-    - '../db/schema.rb'
-    - '../db/schema_postgres.rb'
-    - '../db/seeds.rb'
-
 #  ------------------------- Metrics ------------------------
 # https://github.com/rubocop-hq/rubocop/blob/v0.63.1/manual/cops_metrics.md
 
