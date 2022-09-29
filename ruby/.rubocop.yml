@@ -3,11 +3,14 @@ require:
  - rubocop-rspec
 
 AllCops:
+  DisabledByDefault: true
   TargetRubyVersion: 2.5
-  NewCops: enable
   Exclude:
     - 'spec/dummy/bin/*'
     - '*.md'
+    - '../db/schema.rb'
+    - '../db/schema_postgres.rb'
+    - '../db/seeds.rb'
 
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
