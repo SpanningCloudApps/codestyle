@@ -33,6 +33,7 @@ jobs:
         shell: bash
         run: |
           cd ruby/
+          bundle install
           bundle exec rubocop
       - name: Run Tests
         shell: bash
