@@ -27,13 +27,13 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: ${{ github.workspace }}/ruby
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Run RuboCop
         shell: bash
         run: |
           cd ruby/
-          bundle install
           bundle exec rubocop
       - name: Run Tests
         shell: bash
