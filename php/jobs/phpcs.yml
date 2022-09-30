@@ -1,0 +1,39 @@
+"./php-vendor-cache":
+  image: composer:2.1.5
+  before_script:
+    - composer install
+  cache:
+    - key:
+        files:
+          - composer.json
+      paths:
+        - vendor/
+        - composer.lock
+
+"./phpcs":
+  extends: "./php-vendor-cache"
+  variables:
+    PHPCS_BIN: ./vendor/bin/phpcs
+    PHPCS_DIRECTORIES: "src tests"
+    PHPCS_STANDART: PSR12
+  script:
+    - ${PHPCS_BIN} -p
+      --basepath=.
+      --standard=${PHPCS_STANDART}
+      --report-junit=report.xml
+      --report-json=report.json
+      --report-code=report.txt
+      --report-summary
+      --report-width=180
+      ${PHPCS_DIRECTORIES}
+  artifacts:
+    reports:
+      junit: report.xml
+    paths:
+      - report.xml
+      - report.json
+      - report.txt
+    expose_as: 'logs'
+    when: always
+    expire_in: "1 day"
+  timeout: 2m
