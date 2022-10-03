@@ -38,6 +38,6 @@ jobs:
           bundle _2.3.7_ exec rubocop -c .rubocop.yml --force-exclusion --require rubocop-rake
       - name: Run Tests
         shell: bash
-        run: | # add more tests as necessary below rake rubocop. Make sure they pass before PR
+        run: | # add more tests as necessary in rake file. Make sure they pass before PR
           cd ruby/
-          bundle _2.3.7_ exec rake rubocop
+          bundle _2.3.7_ exec rake
