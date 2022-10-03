@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         working-directory: ${{ github.workspace }}/ruby
         run: |
-          gem install bundler
+          gem install bundler -v 2.1.4
           bundle install 
       - name: Run Tests
         working-directory: ${{ github.workspace }}/ruby
