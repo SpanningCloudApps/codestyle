@@ -35,10 +35,10 @@ jobs:
         run: |
           gem install bundler
           bundle install 
-      - name: Run RuboCop
-        working-directory: ${{ github.workspace }}/ruby
-        run: |
-          bundle exec rubocop -c .rubocop.yml --force-exclusion --require rubocop-rake
+      #- name: Run RuboCop
+       # working-directory: ${{ github.workspace }}/ruby
+        #run: |
+         # bundle exec rubocop -c .rubocop.yml --force-exclusion --require rubocop-rake
       - name: Run Tests
         working-directory: ${{ github.workspace }}/ruby
         run: | # add more tests as necessary in rake file. Make sure they pass before PR
