@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        ruby: ["2.5", "2.7", "3.0", "3.1"]
+        ruby: ["2.2.8", "2.3.1"]
 
     runs-on: ${{ matrix.os }}
 
@@ -29,16 +29,11 @@ jobs:
         with:
           working-directory: ${{ github.workspace }}/ruby
           ruby-version: ${{ matrix.ruby }}
-          #bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Install dependencies
         working-directory: ${{ github.workspace }}/ruby
         run: |
           gem install bundler
           bundle install 
-      #- name: Run RuboCop
-       # working-directory: ${{ github.workspace }}/ruby
-        #run: |
-         # bundle exec rubocop -c .rubocop.yml --force-exclusion --require rubocop-rake
       - name: Run Tests
         working-directory: ${{ github.workspace }}/ruby
         run: | # add more tests as necessary in rake file. Make sure they pass before PR
