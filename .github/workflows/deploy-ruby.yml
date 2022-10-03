@@ -30,14 +30,12 @@ jobs:
           working-directory: ${{ github.workspace }}/ruby
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Run Tests
-        shell: bash
-        run: | # add more tests as necessary in rake file. Make sure they pass before PR
-          cd ruby/
-          bundle exec rake
       - name: Run RuboCop
-        shell: bash
+        working-directory: ${{ github.workspace }}/ruby
         run: |
-          cd ruby/
           bundle exec rubocop -c .rubocop.yml --force-exclusion --require rubocop-rake
+      - name: Run Tests
+        working-directory: ${{ github.workspace }}/ruby
+        run: | # add more tests as necessary in rake file. Make sure they pass before PR
+          bundle exec rake
       
