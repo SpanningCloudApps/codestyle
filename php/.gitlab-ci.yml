@@ -5,5 +5,6 @@ stages:
 
 "phpcs":
   extends: "./phpcs"
+  stage: "Code style validation"
   variables:
     PHPCS_BIN: ./vendor/bin/phpcs
