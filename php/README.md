@@ -22,22 +22,29 @@ In this repository you could find job and example of gitlab workflow for configu
 
 The file `./jobs/phpcs.yml` contains hidden job for checking PHP code style in the repository with installed `phpcs` as dev dependency. You could include this job to your project using function of gitlab for including external configurations. See [official documentation](https://docs.gitlab.com/ee/ci/yaml/includes.html) In the `./.gitlab-ci.yml` file you can see example of including dependency from the local repository:
 
-`include: '/jobs/phpcs.yml'`
+```yml
+include: '/jobs/phpcs.yml'
+```
 
 After that you could declare stage in pipeline for validating code style:
 
-`stages:`
-`  - "Code style validation"`
+```yml
+stages:
+  - "Code style validation"
+```
 
 See examples in `./.gitlab-ci.yml`.
 
 And after that you could extend hiddent job and assign it to the appropriate stage:
 
-``"phpcs":
+
+```yml
+"phpcs":
   stage: "Code style validation"
   extends: "./phpcs"
   variables:
-    PHPCS_BIN: ./vendor/bin/phpcs``
+    PHPCS_BIN: ./vendor/bin/phpcs
+```
 
 Also it is possible to overwrite path to the bin file for running phpcs if you have alternative structure of repository.
 See example of workflow in the `./.gitlab-ci.yml` file.
