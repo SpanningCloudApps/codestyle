@@ -33,7 +33,7 @@ jobs:
         working-directory: ${{ github.workspace }}/ruby
         run: |
           gem install bundler -v 2.1.4
-          bundle install 
+          bundle _2.1.4_ install 
       - name: Run Tests
         working-directory: ${{ github.workspace }}/ruby
         run: | # add more tests as necessary in rake file. Make sure they pass before PR
