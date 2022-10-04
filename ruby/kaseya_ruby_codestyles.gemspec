@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rubocop-rake', '~> 0.6'
   spec.add_dependency 'rubocop-rspec', '~> 2.5'
   spec.add_dependency 'rubocop-thread_safety', '~> 0.4'
-  spec.add_development_dependency 'bundler', '~> 2.1.4'
+  spec.add_development_dependency 'bundler', '~> 1.17.3'
   spec.add_development_dependency 'rake', '~> 13.0'
 
   spec.metadata = {

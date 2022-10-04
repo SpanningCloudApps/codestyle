@@ -66,8 +66,8 @@ PLATFORMS
 
 DEPENDENCIES
   Kaseya_Ruby_Codestyles!
-  bundler (~> 2.1.4)
+  bundler (~> 1.17.3)
   rake (~> 13.0)
 
 BUNDLED WITH
-   2.1.4
+   1.17.3
