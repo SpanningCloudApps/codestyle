@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.extra_rdoc_files = ['README.md']
 
-  spec.add_dependency 'rubocop', '~> 0.81'
+  spec.add_dependency 'rubocop', '~> 0.57'
   spec.add_dependency 'rubocop-performance', '~> 1.11'
   spec.add_dependency 'rubocop-rails', '~> 2.12'
   spec.add_dependency 'rubocop-rake', '~> 0.6'
