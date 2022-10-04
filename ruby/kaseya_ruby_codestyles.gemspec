@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.extra_rdoc_files = ['README.md']
 
-  spec.add_dependency 'rubocop', '0.70'
+  spec.add_dependency 'rubocop', '0.71'
   spec.add_dependency 'rubocop-performance', '1.5'
   spec.add_dependency 'rubocop-rails', '2.0.0'
   spec.add_dependency 'rubocop-rake', '~> 0.6'
@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.17.3'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_dependency 'parallel', '1.10.0'
-  spec.add_dependency 'rack', '2.0.1'
+  spec.add_dependency 'rack', '2.0.3'
 
   spec.metadata = {
     'rubygems_mfa_required' => 'true'
