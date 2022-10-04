@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rubocop-thread_safety', '~> 0.4'
   spec.add_development_dependency 'bundler', '~> 1.17.3'
   spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_dependency 'parallel', '== 1.10.0'
 
   spec.metadata = {
     'rubygems_mfa_required' => 'true'
