@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.license = 'Apache'
   spec.platform = Gem::Platform::RUBY
 
-  spec.required_ruby_version = '<= 2.5.0'
+  spec.required_ruby_version = '>= 2.5.0'
 
   spec.summary  = 'Kaseya Ruby style guides and shared style configs.'
   spec.homepage = 'https://github.com/SpanningCloudsApps/codestyle'
@@ -22,16 +22,14 @@ Gem::Specification.new do |spec|
 
   spec.extra_rdoc_files = ['README.md']
 
-  spec.add_dependency 'rubocop', '0.71'
-  spec.add_dependency 'rubocop-performance', '1.5'
-  spec.add_dependency 'rubocop-rails', '2.0.0'
+  spec.add_dependency 'rubocop', '~> 1.28.2'
+  spec.add_dependency 'rubocop-performance', '~> 1.13.3'
+  spec.add_dependency 'rubocop-rails', '~> 2.14'
   spec.add_dependency 'rubocop-rake', '~> 0.6'
-  spec.add_dependency 'rubocop-rspec', '~> 1.7.0'
+  spec.add_dependency 'rubocop-rspec', '~> 2.10'
   spec.add_dependency 'rubocop-thread_safety', '~> 0.4'
-  spec.add_development_dependency 'bundler', '~> 1.17.3'
+  spec.add_development_dependency 'bundler', '~> 2.3.22'
   spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_dependency 'parallel', '1.10.0'
-  spec.add_dependency 'rack', '2.0.3'
 
   spec.metadata = {
     'rubygems_mfa_required' => 'true'
