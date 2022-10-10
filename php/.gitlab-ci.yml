@@ -1,0 +1,10 @@
+include: '/jobs/phpcs.yml'
+
+stages:
+  - "Code style validation"
+
+"phpcs":
+  extends: "./phpcs"
+  stage: "Code style validation"
+  variables:
+    PHPCS_BIN: ./vendor/bin/phpcs
