@@ -7,9 +7,23 @@ This is Kaseya's Ruby library manager. The deploy-ruby.yml runs Rubocop against 
 * Install the `kaseya_ruby_codestyles` gem to get local access to all our public codestyles and files. Look to https://rubygems.org/gems/Kaseya_Ruby_Codestyles for information about dependencies and commands to install.
 
   ```
-  gem 'Kaseya_Ruby_Codestyles', '~> 1.1'
+  gem 'Kaseya_Ruby_Codestyles', '~> 1.1.1'
   gem install kaseya_ruby_codestyles
   ```
+
+* Any dependency errors you run into such as parallel and activesupport version incompatibilities, install the suggested gem version displayed in the prompt message and attempt the install again
+
+  * If you run into the following error during `rubocop-thread_safety` parsing:
+    ```
+    RDoc::Parser::Ruby failure around line 125 of
+    lib/rubocop/cop/thread_safety/instance_variable_in_class_method.rb
+    ```
+    Run these 2 commands and attempt install again
+
+    ```
+    gem install stringio -v 0.0.2
+    gem install rdoc
+    ```
 
 ## Contributions
 
