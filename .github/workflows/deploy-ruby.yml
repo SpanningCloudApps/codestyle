@@ -38,4 +38,3 @@ jobs:
         working-directory: ${{ github.workspace }}/ruby
         run: | # add more tests as necessary in rake file. Make sure they pass before PR
           bundle exec rake
-      
