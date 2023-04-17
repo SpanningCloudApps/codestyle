@@ -1,0 +1,53 @@
+stages:
+  - test
+
+variables:
+  GOLANG_VERSION: "1.20"
+  MIN_CODE_COVER_PERC: 70
+
+go_test:
+  stage: test
+  image: golang:$GOLANG_VERSION
+  coverage: '/total:\s*\(statements\)\s*\d+\.\d+%/'
+  script:
+    - cd go/
+    - go install gotest.tools/gotestsum@latest
+    - gotestsum --junitfile report.xml --format testname -- --count=1 -race -coverprofile=coverage.txt -covermode=atomic ./...
+    - go get github.com/boumenot/gocover-cobertura
+    - go run github.com/boumenot/gocover-cobertura < coverage.txt > coverage.xml
+    - go tool cover -func coverage.txt |& tee coveragePercentage.txt
+  artifacts:
+    when: always
+    paths:
+      - go/coveragePercentage.txt
+    reports:
+      junit: go/report.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: go/coverage.xml
+
+go_lint:
+  stage: test
+  image: golangci/golangci-lint:latest
+  script:
+    - cd go
+    - golangci-lint run --enable=govet |& tee golint.out
+  artifacts:
+    when: on_failure
+    paths:
+      - go/golint.out
+
+go_coverage:
+  stage: test
+  needs:
+    - go_test
+  script:
+    - coverageLine="$(tail -1 $CI_PROJECT_DIR/go/coveragePercentage.txt)"
+    - coverage="$(echo $coverageLine | grep -oP '\d+\.\d')"
+    - >
+      if (( ${coverage%.*} < $MIN_CODE_COVER_PERC )) ;
+        then echo "code coverage (currently $coverage%) below threshold of $MIN_CODE_COVERAGE%" && exit 1 ;
+        else echo "code coverage (currently $coverage%) above threshold of $MIN_CODE_COVERAGE%" && exit 0 ;
+      fi
+  rules:
+    - if: $MIN_CODE_COVERAGE != "0"

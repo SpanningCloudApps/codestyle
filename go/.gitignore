@@ -1,0 +1,7 @@
+.idea
+.vscode
+test.out
+report.xml
+coverage.txt
+coverage.xml
+golint.out

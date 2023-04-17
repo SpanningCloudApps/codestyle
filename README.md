@@ -1,6 +1,6 @@
 # Kaseya CodeStyle Guide
 
-This repository provides a set of code styles for several programming languages: [Ruby](https://github.com/SpanningCloudApps/codestyle/blob/main/ruby/), [Java](https://github.com/SpanningCloudApps/codestyle/tree/main/java), [C#](https://github.com/SpanningCloudApps/codestyle/blob/main/csharp/) and [JavaScript](https://github.com/SpanningCloudApps/codestyle/blob/main/js/)
+This repository provides a set of code styles for several programming languages: [Ruby](https://github.com/SpanningCloudApps/codestyle/blob/main/ruby/), [Java](https://github.com/SpanningCloudApps/codestyle/tree/main/java), [C#](https://github.com/SpanningCloudApps/codestyle/blob/main/csharp/), [JavaScript](https://github.com/SpanningCloudApps/codestyle/blob/main/js/) and [Go](https://github.com/SpanningCloudApps/codestyle/blob/main/js/).
 
 ## How to use package in your project
 
