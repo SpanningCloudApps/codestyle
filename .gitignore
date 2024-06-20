@@ -7,6 +7,8 @@
 *.war
 *.ear
 
+# PHP #
+vendor
 # Node #
 ######################
 node_modules

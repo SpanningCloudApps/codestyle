@@ -1,0 +1,14 @@
+{
+    "name": "kaseya/php-codestyle",
+    "description": "PHP code style rules for Kaseya products",
+    "type": "library",
+    "require-dev": {
+        "slevomat/coding-standard": "^8.14"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
