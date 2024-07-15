@@ -8,3 +8,4 @@ stages:
   stage: "Code style validation"
   variables:
     PHPCS_BIN: ./vendor/bin/phpcs
+    PHPCS_STANDARD: phpcs.xml
